@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE99A344FD8B6301B6E0E6C3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D8D81354DE40C1C6C15D95 /* Pods.framework */; };
+		CF1380821CBE0FB000F7ACDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF1380811CBE0FB000F7ACDC /* GoogleService-Info.plist */; };
 		CFAECC3D1CB6A9F6000DADE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAECC3C1CB6A9F6000DADE4 /* AppDelegate.swift */; };
 		CFAECC3F1CB6A9F6000DADE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAECC3E1CB6A9F6000DADE4 /* ViewController.swift */; };
 		CFAECC421CB6A9F6000DADE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAECC401CB6A9F6000DADE4 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 		140A6DBA359B7A1AFF883A3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		39D8D81354DE40C1C6C15D95 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83651E61B3B86203918201C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CF11B3B11CBC05CB008ED838 /* Listen-U-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Listen-U-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF1380811CBE0FB000F7ACDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFAECC391CB6A9F6000DADE4 /* Listen-U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Listen-U.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAECC3C1CB6A9F6000DADE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAECC3E1CB6A9F6000DADE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				CFAECC431CB6A9F6000DADE4 /* Assets.xcassets */,
 				CFAECC451CB6A9F6000DADE4 /* LaunchScreen.storyboard */,
 				CFAECC481CB6A9F6000DADE4 /* Info.plist */,
+				CF1380811CBE0FB000F7ACDC /* GoogleService-Info.plist */,
+				CF11B3B11CBC05CB008ED838 /* Listen-U-Bridging-Header.h */,
 			);
 			path = "Listen-U";
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				CFAECC471CB6A9F6000DADE4 /* LaunchScreen.storyboard in Resources */,
 				CFAECC441CB6A9F6000DADE4 /* Assets.xcassets in Resources */,
 				CFAECC421CB6A9F6000DADE4 /* Main.storyboard in Resources */,
+				CF1380821CBE0FB000F7ACDC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +331,13 @@
 			baseConfigurationReference = B83651E61B3B86203918201C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Listen-U/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.techacademy.shunichi.tanaka.Listen-U";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Listen-U/Listen-U-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -337,10 +346,12 @@
 			baseConfigurationReference = 140A6DBA359B7A1AFF883A3C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Listen-U/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.techacademy.shunichi.tanaka.Listen-U";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Listen-U/Listen-U-Bridging-Header.h";
 			};
 			name = Release;
 		};

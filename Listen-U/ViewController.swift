@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var ballView: SpringView!
     @IBAction func ballButtonPressed(sender: AnyObject) {
         
@@ -23,6 +23,11 @@ class ViewController: UIViewController {
         
         animateView()
         
+    }
+    @IBAction func signInButtonClicked(sender: AnyObject) {
+        let signIn = GIDSignIn.sharedInstance()
+        signIn.uiDelegate = self
+        signIn.signIn()
     }
 
     
@@ -123,9 +128,34 @@ class ViewController: UIViewController {
         .EaseInOutBack
     ]
 
-
+    // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
+    // UIViewController.
+    
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+/*    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        myActivityIndicator.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func signIn(signIn: GIDSignIn!,
+                presentViewController viewController: UIViewController!) {
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func signIn(signIn: GIDSignIn!,
+                dismissViewController viewController: UIViewController!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+*/    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
